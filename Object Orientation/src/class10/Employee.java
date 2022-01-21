@@ -9,6 +9,8 @@ public class Employee {
 	private String department;
 	
 	public static int getSerialNum() {
+		int i=0;
+		employeeName = "Lee";
 		return serialNum;
 	}
 
