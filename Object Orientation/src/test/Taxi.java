@@ -13,5 +13,6 @@ public class Taxi {
 	public void show()
 	{
 		System.out.println(name+" 수입은 "+money+"원 입니다.");
+		
 	}
 }

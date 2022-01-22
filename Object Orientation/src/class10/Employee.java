@@ -7,23 +7,15 @@ public class Employee {
 	int Id;
 	private String name;
 	private String department;
-	
-	public static int getSerialNum() {
-		int i=0;
-		employeeName = "Lee";
-		return serialNum;
-	}
-
-	public static void setSerialNum(int serialNum) {
-		Employee.serialNum = serialNum;
-	}
-
 	public Employee()
 	{
 		serialNum++;
 		Id = serialNum;
 	}
-	
+	public static int getSerialNum() {
+		int i=0;
+		return serialNum;
+	}
 	public int getId() {
 		return Id;
 	}
