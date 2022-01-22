@@ -13,7 +13,6 @@ public class Employee {
 		Id = serialNum;
 	}
 	public static int getSerialNum() {
-		int i=0;
 		return serialNum;
 	}
 	public int getId() {

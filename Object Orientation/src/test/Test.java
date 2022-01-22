@@ -1,15 +1,13 @@
 package test;
 
-import java.util.Scanner;
 public class Test {
 	public static void main(String[] args)
 	{
-		Scanner sc = new Scanner(System.in);
-		People E = new People("Edward",20000);
-		Taxi T = new Taxi("잘나간다 운수");
-		E.TakeTaxi(T, 10000);
+		CarFactory factory = CarFactory.getInstance();
+		Car mySonata = factory.createCar();
+		Car yourSonata = factory.createCar();
 		
-		E.Show();
-		T.show();
+		System.out.println(mySonata.getCarNum());
+		System.out.println(yourSonata.getCarNum());
 	}
 }
