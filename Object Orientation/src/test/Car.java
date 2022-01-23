@@ -1,14 +1,13 @@
 package test;
 
 public class Car {
-	private static int CarNum = 10000;
+	private static int serialNum = 10000;
 	private int num;
 	public Car() {
-		CarNum++;
-		num = CarNum;
+		serialNum++;
+		num = serialNum;
 	}
-	public int getCarNum()
-	{
+	public int getCarNum() {
 		return num;
 	}
 }
