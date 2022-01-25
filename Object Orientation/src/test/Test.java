@@ -1,14 +1,15 @@
 package test;
 
 public class Test {
-
 	public static void main(String[] args) {
-		CarFactory Factory = CarFactory.getInstance();
-		Car mySonata = Factory.createCar();
-		Car yourSonata = Factory.createCar();
-		
-		System.out.println(mySonata.getCarNum());
-		System.out.println(yourSonata.getCarNum());
+		Student Lee = new Student("Lee");
+		Lee.addsubject("국어", 100);
+		Lee.addsubject("수학", 50);
+		Lee.showInfo();
+		Student Kim = new Student("Kim");
+		Kim.addsubject("국어", 70);
+		Kim.addsubject("수학", 85);
+		Kim.addsubject("영어", 100);
+		Kim.showInfo();
 	}
-
 }
