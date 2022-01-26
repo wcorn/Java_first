@@ -1,19 +1,18 @@
 package test;
 
 public class Subject {
-	private String subject;
-	private int score;
-	public String getSubject() {
-		return subject;
+	private String subjectName;
+	private int subjectScore;
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
 	}
-	public void setSubject(String subject) {
-		this.subject = subject;
+	public void setSubjectScore(int subjectScore) {
+		this.subjectScore = subjectScore;
 	}
-	public int getScore() {
-		return score;
+	public String getSubjectName() {
+		return subjectName;
 	}
-	public void setScore(int score) {
-		this.score = score;
+	public int getSubjectScore() {
+		return subjectScore;
 	}
-	
 }
