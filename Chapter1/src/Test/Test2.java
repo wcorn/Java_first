@@ -4,23 +4,47 @@ public class Test2 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-        sc.close();
-        int a = sc.nextInt();
-        int cnt=1;
-        for(int i=1;i>0;i++){
-            for(int j=i, k=1; j>0;j--,k++){
-                    if(cnt==a){
-                    	if(i%2==1) {
-                    		System.out.println(j+"/"+k);
-                    	}
-                    	else if(i%2==0) {
-                    		System.out.println(k+"/"+j);
-                    	}
-                        return;
-                    }
-                    cnt++;
-                
-            }
-        }
+		int num = sc.nextInt();
+		String[] ch = new String[num];
+		String cmp;
+		for(int i=0; i<num; i++) {
+			ch[i] = sc.next();
+		}
+		for(int i=0; i<=num;i++) {
+			for(int j=i+1;j<=num-1;j++) {
+				if(ch[i].length()>ch[j].length()) {
+					cmp = ch[i];
+					ch[i] = ch[j];
+					ch[j] = cmp;
+				}
+			}
+		}
+		for(int i=0; i<=num;i++) {
+			for(int j=i+1;j<=num-1;j++) {
+				if(ch[i].length()==ch[j].length()) {
+					char[] ch1 = ch[i].toCharArray();
+					char[] ch2 = ch[j].toCharArray();
+					for(int k=0;k<num-1;k++) {
+						if(ch1[k]>=ch2[k]) {
+							System.out.println(i+" "+j+" "+ch[i]+" "+ch[j]);
+							cmp = ch[i];
+							ch[i] = ch[j];
+							ch[j] = cmp;
+							break;
+						}
+						else {
+							break;
+						}
+					}
+				}
+			}
+		}
+		for(int i=0; i<num;i++) {
+			System.out.println(ch[i]);
+		}
+	
 	}
 }
+
+
+
