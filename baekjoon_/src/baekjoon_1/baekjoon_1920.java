@@ -4,25 +4,23 @@ public class baekjoon_1920{
 	static int[] n1;
 	static int[] n1_copy;
 	static int[] n2;
-	static int binarySearch(int n) {
-		int answer = 0;
+	static boolean binarySearch(int n) {
 		int left = 0;
         int right = n1.length-1; 
-        if(n<n1[0]||n>n1[n1.length-1]) {
-        	return -1;
-        }
-        else {
+        
         	while (left <= right) {
         		int mid = (left + right) / 2;
-        		if(n1[mid]>n) {
-        			left = mid;
+        		if(n1[mid]==n) {
+        			return true;
+        		}
+        		if(n1[mid]<n) {
+        			left = mid+1;
         		}
         		else {
-        			right = mid;
+        			right = mid-1;
         		}
-            }
-        return left;
-        }
+        	}
+        	return false;
 	}
 	static void merge(int left,int mid, int right) {
 		int i, j, k, l;
@@ -79,10 +77,16 @@ public class baekjoon_1920{
         	n2[i] = Integer.parseInt(str2[i]);
         }
         for(int i=0;i<num_2;i++) {
-        	sb.append(binarySearch(n2[i]));
-        	sb.append("\n");
+        	if (binarySearch(n2[i])) {
+				sb.append(1).append('\n');
+			}
+			else {
+				sb.append(0).append('\n');
+			}
         }
         bw.write(sb.toString());
         bw.flush();
+        br.close();
+        bw.close();
     }
 }
