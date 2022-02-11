@@ -30,7 +30,7 @@ public class baekjoon_11650 {
 	}
 	public static void merge_sort(int left, int right) {
 		int mid;
-		if(right>left) {
+		if(left<right) {
 			mid = (left+right)/2;
 			merge_sort(left,mid);
 			merge_sort(mid+1,right);

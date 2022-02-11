@@ -1,37 +1,88 @@
 package baekjoon_1;
 import java.io.*;
 public class baekjoon_1920{
+	static int[] n1;
+	static int[] n1_copy;
+	static int[] n2;
+	static int binarySearch(int n) {
+		int answer = 0;
+		int left = 0;
+        int right = n1.length-1; 
+        if(n<n1[0]||n>n1[n1.length-1]) {
+        	return -1;
+        }
+        else {
+        	while (left <= right) {
+        		int mid = (left + right) / 2;
+        		if(n1[mid]>n) {
+        			left = mid;
+        		}
+        		else {
+        			right = mid;
+        		}
+            }
+        return left;
+        }
+	}
+	static void merge(int left,int mid, int right) {
+		int i, j, k, l;
+		  i = left;
+		  j = mid+1;
+		  k = left;
+		  while(i<=mid && j<=right){
+		    if(n1[i]<=n1[j])
+		    	n1_copy[k++] = n1[i++];
+		    else
+		    	n1_copy[k++] = n1[j++];
+		  }
+
+		  if(i>mid){
+		    for(l=j; l<=right; l++)
+		    	n1_copy[k++] = n1[l];
+		  }
+		  else{
+		    for(l=i; l<=mid; l++)
+		    	n1_copy[k++] = n1[l];
+		  }
+
+		  for(l=left; l<=right; l++){
+			  n1[l] = n1_copy[l];
+		  }
+		}
+	public static void merge_sort(int left, int right){
+		  int mid;
+		  if(left<right){
+		    mid = (left+right)/2;
+		    merge_sort(left, mid);
+		    merge_sort(mid+1, right);
+		    merge(left, mid, right);
+		  }
+		}
     public static void main(String[] args)throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int num1 = Integer.parseInt(br.readLine());
-        String str1 = br.readLine();
-        String[] str1_1 = str1.split(" ");
-        int[] num_1 = new int[num1];
-        for(int i=0;i<num1;i++){
-            num_1[i] = Integer.parseInt(str1_1[i]);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
+        int num_1 = Integer.parseInt(br.readLine());
+        String str = br.readLine();
+        String[] str2 = str.split(" ");
+        n1 = new int[num_1];
+        for(int i=0; i<num_1;i++) {
+        	n1[i] = Integer.parseInt(str2[i]);
         }
-        int num2 = Integer.parseInt(br.readLine());
-        String str2 = br.readLine();
-        String[] str2_1 = str2.split(" ");
-        int[] num_2 = new int[num2];
-        int count=0;
-        for(int i=0;i<num2;i++){
-            num_2[i] = Integer.parseInt(str2_1[i]);
-            int lo=-1;
-            int hi = num_2[i];
-            while(lo+1<hi) {
-            	int mid = (lo+hi)/2;
-                System.out.println(hi+" "+lo+" "+" "+mid);
-            	if(num_1[mid]<num_2[i]) {
-            		lo = mid;
-            	}
-            	else {
-            		hi = mid;
-            	}
-            }
-            if(hi == num_2[i]){
-            	count++;
-            }
+        n1_copy = new int[num_1];
+        merge_sort(0,num_1-1);
+        int num_2 = Integer.parseInt(br.readLine());
+        str = br.readLine();
+        str2 = str.split(" ");
+        n2 = new int[num_2];
+        for(int i=0; i<num_2;i++) {
+        	n2[i] = Integer.parseInt(str2[i]);
         }
+        for(int i=0;i<num_2;i++) {
+        	sb.append(binarySearch(n2[i]));
+        	sb.append("\n");
+        }
+        bw.write(sb.toString());
+        bw.flush();
     }
 }
