@@ -1,61 +1,45 @@
 package baekjoon_1;
 import java.io.*;
-public class ddd {
+public class baekjoon_11723 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	static StringBuilder sb = new StringBuilder();
-	static int[] S;
-	static int top=0;
+	static boolean[] S = new boolean[21];
 	static int n;
 	static void add(){
-		S[top] = n;
-		top++;
+		S[n]=true;
 	}
 	static void remove(){
-		int i=0;
-		for(i=0;i<top;i++) {
-			if(S[i]==n) {
-				S[i]=0;
-			}
-		}
+		S[n]=false;
 	}
 	static void check(){
-		int i;
-		int k=0;
-		for(i=0;i<top;i++) {
-			if(S[i]==n) {
-				sb.append(n+" "+1+"\n");
-				k++;
-			}
+		if(S[n]==true) {
+			sb.append(1+"\n");
 		}
-		if(k==0){
-			sb.append(n+" "+0+"\n");
+		else {
+			sb.append(0+"\n");
 		}
 }
 	static void toggle(){
-		int k=0;
-		for(int i=0;i<top;i++) {
-			if(S[i]==n) {
-				S[i]=0;
-				k++;
-			}
+		if(S[n]==true) {
+			S[n]=false;
 		}
-		if(k==0){
-			add();
+		else {
+			S[n]=true;
 		}
 }
 	static void all(){
-		top = 20;
-	for(int i=0;i<top;i++) {
-		S[i] = i+1;
+	for(int i=1;i<=20;i++) {
+		S[i]=true;
 	}
 }
 	static void empty(){
-	top=0;
+		for(int i=1;i<=20;i++) {
+			S[i]=false;
+		}
 }
 	public static void main(String[] args) throws IOException{
 		int num = Integer.parseInt(br.readLine());
-		S = new int[num];
 		for(int i=0;i<num;i++) {
 			String str = br.readLine();
 			String[] str2 = str.split(" ");
