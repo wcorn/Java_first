@@ -1,10 +1,10 @@
-public class mergeSort {
-	private int[] arr;
-	private int[] arr_copy;
-	public mergeSort(int[] num)
+public class MergeSort {
+	private float[] arr;
+	private float[] arr_copy;
+	public MergeSort(float[] num)
 	{
 		arr = num;
-		arr_copy = new int[arr.length];
+		arr_copy = new float[arr.length];
 	}
 	public void sort()
 	{
