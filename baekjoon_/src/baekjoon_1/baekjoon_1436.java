@@ -10,7 +10,6 @@ public class baekjoon_1436{
         while(true){
         	int a = k;
             while(a>0){
-                int[] i = new int[3];
                 int counto=0;
                 if(a%10==6){
                     counto++;

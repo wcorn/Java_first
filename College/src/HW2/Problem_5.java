@@ -4,14 +4,15 @@ public class Problem_5 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the Number");
-		// ÀÔ·Â
+		// ï¿½Ô·ï¿½
 		String num = sc.next();
-		// ºñÆ®º°·Î ³ª´©°í Á¤¼öÇüÀ¸·Î º¯È¯ ÈÄ ÀúÀå
+		// ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int n1 = Integer.parseInt(num.substring(0,1));
 		int n2 = Integer.parseInt(num.substring(1,2));
 		int n3 = Integer.parseInt(num.substring(2,3));
 		int n4 = Integer.parseInt(num.substring(3,4));
-		// 2Áø¼ö·Î º¯È¯ 
-		System.out.println(n1*8+n2*4+n3*2+n4*1);
+		// 2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ 
+		System.out.println(n1*8+n2*4+n3*2+n4*1);	
+		sc.close();
 		}
 }

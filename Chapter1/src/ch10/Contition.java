@@ -2,11 +2,12 @@ package ch10;
 import java.util.Scanner;
 public class Contition {
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		int max;
-		System.out.println("Ã¹¹øÂ° ¼ö");
+		System.out.println("Ã¹ï¿½ï¿½Â° ï¿½ï¿½");
 		int num1 = sc.nextInt();
-		System.out.println("µÎ¹øÂ° ¼ö");
+		System.out.println("ï¿½Î¹ï¿½Â° ï¿½ï¿½");
 		int num2 = sc.nextInt();
 		max = (num1>num2)?num1:num2;
 		System.out.println(max);
@@ -19,12 +20,13 @@ public class Contition {
 			default ->
 				0;
 			};
-		System.out.println("°á°ú"+num);
+		System.out.println("ï¿½ï¿½ï¿½"+num);
 		for(; max<max+10;max++)
 		{
 			if(max>10)break;
 			if(max==7)continue;
 			System.out.println(max);
 		}
+		sc.close();
 	}
 }

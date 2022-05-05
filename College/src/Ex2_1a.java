@@ -4,5 +4,6 @@ public class Ex2_1a {
 		Scanner sc = new Scanner(System.in);
 		int year = sc.nextInt();
 		System.out.println(year/1000+" "+year/100%10+" "+year/10%10+" "+year%10);
+		sc.close();
 	}
 }

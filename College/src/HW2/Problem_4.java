@@ -1,3 +1,10 @@
+/*
+ Program to convert a temperature given in degrees from either Celsius to Fahrenheit or Fahrenheit to Celsius.
+ Author: Dongseok K. Programmer
+ E-mail Address: dsk0820@naver.com
+ Programming Assignment 1
+ Last changed: April 11, 2022
+ */
 package HW2;
 import java.util.*;
 public class Problem_4 {
@@ -5,23 +12,24 @@ public class Problem_4 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Eneter price of item");
 		System.out.print("(from 25 cent to a dollar, in 5-cent increments): ");
-		//cent ÀÔ·Â
+		//cent ï¿½Ô·ï¿½
 		int cent = sc.nextInt();
-		//°Å½º¸§µ·
+		//ï¿½Å½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int change = 100-cent;
-		//ÄõÅÍ °è»ê ¹× °Å½º¸§µ·¿¡¼­ Á¦°Å
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int quarters = change/25;
 		change%=25;
-		//µð¿¥ °è»ê ¹× °Å½º¸§µ·¿¡¼­ Á¦°Å
-		int diems = change/10;
+		//ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		int diems = change/10; 
 		change%=10;
-		//´ÏÄÌ °è»ê
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		int nickel = change/5;
 		System.out.println("\nYou bought an item for "+ cent+" cents and gave me a dollar,");
 		System.out.println("so yoyr change is");
 		System.out.println(quarters+" quarters");
 		System.out.println(diems+" diems, and");
 		System.out.println(nickel+ " nickel.");
+		sc.close();
 	}
 
 }

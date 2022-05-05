@@ -24,7 +24,7 @@ public class Test2 {
 				if(ch[i].length()==ch[j].length()) {
 					char[] ch1 = ch[i].toCharArray();
 					char[] ch2 = ch[j].toCharArray();
-					for(int k=0;k<num-1;k++) {
+					for(int k=0;k<num-1;) {
 						if(ch1[k]>=ch2[k]) {
 							System.out.println(i+" "+j+" "+ch[i]+" "+ch[j]);
 							cmp = ch[i];
@@ -42,7 +42,7 @@ public class Test2 {
 		for(int i=0; i<num;i++) {
 			System.out.println(ch[i]);
 		}
-	
+	sc.close();
 	}
 }
 

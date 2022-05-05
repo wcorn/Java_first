@@ -13,7 +13,6 @@ public class baekjoon_10816 {
 			n[Integer.parseInt(s_1[i])+10000000]++;
 		}
 		int num_2 = Integer.parseInt(br.readLine());
-		int a;
 		String str_2 = br.readLine();
 		String[] s_2 = str_2.split(" ");
 		StringBuilder ret = new StringBuilder();

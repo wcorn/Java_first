@@ -7,7 +7,7 @@ public class baekjoon_11399 {
 	static int[] time;
 	static int[] copy;
 	static void merge(int left,int mid, int right) {
-		int i,j,k,l;
+		int i,j,k;
 		i=left;
 		j=mid+1;
 		k=left;
@@ -33,11 +33,20 @@ public class baekjoon_11399 {
 		int num = Integer.parseInt(br.readLine());
 		time = new int[num];
 		copy = new int[num];
+		int sub=0;
 		String str = br.readLine();
 		String[] str2 = str.split(" ");
 		for(int i=0;i<num;i++) {
 			time[i] = Integer.parseInt(str2[i]);
 		}
 		merge_sort(0,num-1);
+		for(int i=0;i<num;i++) {
+			sub*=time[i]*num-i;
+		}
+		sb.append(sub);
+		bw.write(sb.toString());
+		bw.flush();
+		br.close();
+		bw.close();
 	}
 }

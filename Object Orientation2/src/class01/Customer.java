@@ -23,7 +23,7 @@ public class Customer {
 		this.name = name;
 	}
 	public String getGrade() {
-		return Grade;
+		return this.Grade;
 	}
 	public void setGrade(String grade) {
 		Grade = grade;
@@ -33,6 +33,6 @@ public class Customer {
 		return price;
 	}
 	public String ShowInfo() {
-		return name+"님 등급"+Grade+"포인트"+bonusPoint;
+		return name+"grad"+Grade+"point"+bonusPoint;
 	}
 }
