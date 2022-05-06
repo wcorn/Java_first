@@ -1,10 +1,10 @@
 public class MergeSort {
-	private float[] arr;
-	private float[] arr_copy;
-	public MergeSort(float[] num)
+	private String[] arr;
+	private String[] arr_copy;
+	public MergeSort(String[] num)
 	{
 		arr = num;
-		arr_copy = new float[arr.length];
+		arr_copy = new String[arr.length];
 	}
 	public void sort()
 	{
@@ -27,7 +27,7 @@ public class MergeSort {
 		j=mid+1;
 		k=left;
 		while(i<=mid && j<=right){
-		    if(arr[i]<=arr[j])
+		    if(arr[i].compareTo(arr[j])<=0)
 		    	arr_copy[k++] = arr[i++];
 		    else
 		    	arr_copy[k++] = arr[j++];
