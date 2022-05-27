@@ -16,7 +16,7 @@ public class Customer {
 		this.name = name;
 		Grade = "SILVER";
 		bonusRatio = 0.01;
-		System.out.println("Customer() ȣ��");
+		System.out.println("Customer()");
 	}
 	public int getID() {
 		return ID;
@@ -41,6 +41,6 @@ public class Customer {
 		return price;
 	}
 	public String ShowInfo() {
-		return name+"�� ���"+Grade+"����Ʈ"+bonusPoint;
+		return name+" "+Grade+" "+bonusPoint;
 	}
 }

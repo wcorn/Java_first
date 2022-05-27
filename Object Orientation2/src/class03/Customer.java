@@ -9,14 +9,14 @@ public class Customer {
 	/*public Customer() {
 		Grade = "SILVER";
 		bonusRatio = 0.01;
-		System.out.println("Customer() È£Ãâ");
+		System.out.println("Customer() È£ï¿½ï¿½");
 	}*/
 	public Customer(int ID,String name) {
 		this.ID = ID;
 		this.name = name;
 		Grade = "SILVER";
 		bonusRatio = 0.01;
-		System.out.println("Customer() È£Ãâ");
+		System.out.println("Customer() ");
 	}
 	public int getID() {
 		return ID;
@@ -41,6 +41,6 @@ public class Customer {
 		return price;
 	}
 	public String ShowInfo() {
-		return name+"´Ô µî±Þ"+Grade+"Æ÷ÀÎÆ®"+bonusPoint;
+		return name+" "+Grade+" "+bonusPoint;
 	}
 }

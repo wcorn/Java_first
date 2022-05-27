@@ -9,12 +9,11 @@ public class MergeSort {
 	private int[] arr;
 	private int[] arr_copy;
 
-	// integer 형태의 배열 주소 복사 및 추가 로 생성된 배열 길이 정의
+	// integer 형태의 배열을 매개변수로 받기 및 추가로 생성된 배열 길이 정의
 	public MergeSort(int[] num) {
 		arr = num;
 		arr_copy = new int[arr.length];
 	}
-
 	// 정렬 메소드
 	public void sort() {
 		merge_sort(0, arr.length - 1);
