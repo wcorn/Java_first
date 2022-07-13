@@ -7,7 +7,7 @@ public class baekjoon_11399 {
 	static int[] time;
 	static int[] copy;
 	static void merge(int left,int mid, int right) {
-		int i,j,k;
+		int i,j,k,l;
 		i=left;
 		j=mid+1;
 		k=left;
@@ -16,9 +16,21 @@ public class baekjoon_11399 {
 				copy[k++] = time[i++];
 			}
 			else {
-				
+				copy[k++] = time[j++];
 			}
 		}
+		if(i>mid){
+		    for(l=j; l<=right; l++)
+		    	copy[k++] = time[l];
+		  }
+		  else{
+		    for(l=i; l<=mid; l++)
+		    	copy[k++] = time[l];
+		  }
+
+		  for(l=left; l<=right; l++){
+			  time[l] = copy[l];
+		  }
 	}
 	static void merge_sort(int left, int right) {
 		int mid;
@@ -41,7 +53,7 @@ public class baekjoon_11399 {
 		}
 		merge_sort(0,num-1);
 		for(int i=0;i<num;i++) {
-			sub*=time[i]*num-i;
+			sub+=time[i]*(num-i);
 		}
 		sb.append(sub);
 		bw.write(sb.toString());

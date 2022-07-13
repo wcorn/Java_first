@@ -24,6 +24,10 @@ public class GotMilk {
 			System.out.println("no milk");
 			System.out.println("Go buy some milk");
 		}
+		finally
+		{
+			System.out.println("IU");
+		}
 		System.out.println("End of program");
 	}
 
